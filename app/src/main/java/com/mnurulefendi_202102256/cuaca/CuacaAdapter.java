@@ -34,7 +34,9 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
         return new CuacaViewHolder(view);
     }
 
-    private double toCelcius(double kelvin) { return kelvin - 272.15; }
+    private double toCelcius(double kelvin) {
+        return kelvin - 272.15;
+    }
 
     public String formatNumber (double number, String format) {
         DecimalFormat decimalFormat = new DecimalFormat(format);
@@ -47,14 +49,14 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
         WeatherModel wm = lm.getWeatherModelList().get(0);
         MainModel mm = lm.getMainModel();
 
-        String suhu = formatNumber(toCelcius(mm.getTemp_min()), "###.##") + "°C - " +
+        String suhu = formatNumber(toCelcius(mm.getTemp_min()), "###.##") + "ºC - " +
                 formatNumber(toCelcius(mm.getTemp_max()), "###.##") + "C";
 
         Log.d("*88*", wm.getIcon());
 
         switch (wm.getIcon()) {
             case "01d":
-                holder.cuacaImageView.setImageResource(R.mipmap.ic_01d_foreground);
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_01d);
                 break;
 
             case "01n":
@@ -70,7 +72,7 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
                 break;
 
             case "03d":
-                holder.cuacaImageView.setImageResource(R.mipmap.ic_03d_foreground);
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_03d);
                 break;
 
             case "03n":
@@ -78,11 +80,11 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
                 break;
 
             case "04d":
-                holder.cuacaImageView.setImageResource(R.mipmap.ic_04d_foreground);
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_04d);
                 break;
 
             case "04n":
-                holder.cuacaImageView.setImageResource(R.mipmap.ic_04n_foreground);
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_04n);
                 break;
 
             case "09d":

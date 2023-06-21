@@ -1,6 +1,5 @@
 package com.mnurulefendi_202102256.cuaca;
 
-
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -9,9 +8,14 @@ public class ListModel
 {
     @SerializedName("main")
     private MainModel mainModel;
+
     @SerializedName("weather")
     private List<WeatherModel> weatherModelList;
+
     private String dt_txt;
+
+    public ListModel() {
+    }
 
     public MainModel getMainModel() {
         return mainModel;
@@ -37,7 +41,5 @@ public class ListModel
         this.dt_txt = dt_txt;
     }
 
-    public ListModel() {
 
-    }
 }
